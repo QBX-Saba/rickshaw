@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+#GET /data    controllers.Default.redirect(to = "http://ec2-54-179-134-162.ap-southeast-1.compute.amazonaws.com:3000/api/datasources/proxy/1/render")
+GET     /data			 controllers.Application.data(source:String?= "", fromTime:Long ?= 0)
+GET     /test			 controllers.Application.data2(target:String?="", from:String?="-5sec", format:String?="json")
+GET     /                 controllers.Application.indexconnectavo()
+#GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

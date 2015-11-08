@@ -1,0 +1,25 @@
+@(title: String)(content: Html)
+<html>
+<head>
+
+<script type="text/javascript"
+	src="https://raw.githubusercontent.com/prestontimmons/graphitejs/master/jquery.graphite.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="http://pubnub.github.io/eon/v/eon/0.0.9/eon.css" />
+
+</head>
+<body>
+	<div id="chart"></div>
+
+	<script>
+		$.fn.graphite.defaults.width = "450"
+		$.fn.graphite.defaults.height = "300"
+		$.fn.graphite.defaults.url = "http://myserver/render/"
+		$("#graph").graphite({
+			from : "-24hours",
+			target : [ "server.web1.load", ],
+		});
+	</script>
+	<img id="graph">
+</body>
+</html>

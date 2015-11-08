@@ -1,0 +1,59 @@
+@(title: String)(content: Html)
+<html>
+  <head>
+
+    <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.9/eon.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.9/eon.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script>
+	
+    var pubnub = PUBNUB.init({
+    	  publish_key: 'demo',
+    	  subscribe_key: 'demo'
+    	});
+    	var channel = "c3-spline" + Math.random();
+    	eon.chart({
+    	  channel: channel,
+    	  history: true,
+    	  flow: true,
+    	  pubnub: pubnub,
+    	  generate: {
+    	    bindto: '#chart',
+    	    data: {
+    	      labels: false
+    	    }
+    	  }
+    	});
+    </script>
+    <script>
+    var pubnub = PUBNUB.init({
+    	  publish_key: 'demo',
+    	  subscribe_key: 'demo'
+    	});
+    	setInterval(function(){
+    		$.get( "data", { source: "none", fromTime: 0} )
+    		  .done(function( data ) {
+    		    //alert( "Data Loaded: " + data );
+    			  pubnub.publish({
+    		    	    channel: channel,
+    		    	    message: {
+    		    	      eon: {
+    		    	        'device-1': data.value
+    		    	        //'New York': Math.floor(Math.random() * 99),
+    		    	        //'San Francisco': Math.floor(Math.random() * 99),
+    		    	        //'Portland': Math.floor(Math.random() * 99)
+    		    	      }
+    		    	    }
+    		    	  });
+    		  });
+    	  
+
+    	}, 500);
+    </script>
+    
+  </body>
+</html>
