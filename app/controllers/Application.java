@@ -46,7 +46,9 @@ public class Application extends Controller {
 	}
 
 	public Result data2(String target, String from, String format) {
-		final String feedUrl = "http://ec2-54-179-134-162.ap-southeast-1.compute.amazonaws.com:3000/api/datasources/proxy/1/render?format="
+//		final String feedUrl = "http://ec2-54-179-134-162.ap-southeast-1.compute.amazonaws.com:3000/api/datasources/proxy/1/render?format="
+//				+ format + "&from=" + from + "&format=" + format;
+		final String feedUrl = "http://localhost:3000/api/datasources/proxy/1/render?format="
 				+ format + "&from=" + from + "&format=" + format;
 		// + "&jsoncallback=?";
 		// String url = "http://www.google.com/search?q=httpClient";
