@@ -61,20 +61,20 @@ public class Application extends Controller {
 		// request.addHeader("Access-Control-Allow-Origin","*");
 		// request.setHeader("accept", "application/json");
 
-		request.addHeader("Access-Control-Allow-Credentials", "true");
-		request.addHeader("Access-Control-Allow-Headers:Authorization",
-				"Content-Type");
-		// request.addHeader("Access-Control-Allow-Methods,"GET, POST,
-		// OPTIONS");
-		request.addHeader("Access-Control-Allow-Origin", "*");
-		request.addHeader("Cache-Control", "no-cache");
-		request.addHeader("Content-Encoding", "gzip");
-		//request.addHeader("Content-Length", "134");
+//		request.addHeader("Access-Control-Allow-Credentials", "true");
+//		request.addHeader("Access-Control-Allow-Headers:Authorization",
+//				"Content-Type");
+//		// request.addHeader("Access-Control-Allow-Methods,"GET, POST,
+//		// OPTIONS");
+//		request.addHeader("Access-Control-Allow-Origin", "*");
+//		request.addHeader("Cache-Control", "no-cache");
+//		request.addHeader("Content-Encoding", "gzip");
+//		//request.addHeader("Content-Length", "134");
 		request.addHeader("Content-Type", "application/json");
 		//request.addHeader("Date", "Sun, 08 Nov 2015 12:40:20 GMT");
 		request.addHeader("Pragma", "no-cache");
 		//request.addHeader("Server", "nginx/1.4.6 (Ubuntu)");
-		request.addHeader("Vary", "Accept-Encoding");
+		//request.addHeader("Vary", "Accept-Encoding");
 
 		//request.addHeader(arg0, arg1);
 		HttpResponse response;
